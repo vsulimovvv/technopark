@@ -1,0 +1,127 @@
+.directions {
+  padding-top: 20px;
+  @include adaptive-value('padding-bottom',80,50,1);
+
+  &__title {
+    @include fz30();
+    @include adaptive-value('margin-bottom', 80, 50, 1);
+    text-align: center;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+
+    @include breakpointsMaxW($bp-991) {
+      gap: 30px;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 50px 30px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      gap: 40px 15px;
+    }
+  }
+
+  &__text {
+    @include adaptive-value('font-size', 17, 14, 1);
+  }
+
+  &__item {
+    padding-bottom: 40px;
+    position: relative;
+    text-align: center;
+    border-bottom: 5px solid var(--color-dark);
+    @include adaptive-value('padding-top', 140, 100, 1);
+
+    @include breakpointsMaxW($bp-768) {
+      padding-bottom: 20px;
+      border-width: 3px;
+    }
+
+    &::after {
+      @include elDef();
+      top: 0;
+      left: 45%;
+      transform: translateX(-50%);
+
+      @include adaptive-value('width', 150, 110, 1);
+      @include adaptive-value('height', 150, 110, 1);
+    }
+
+    &--geoinformatics {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/directions/1.png'),
+          contain
+        );
+      }
+    }
+
+    &--virtual {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/directions/2.png'),
+          contain
+        );
+      }
+    }
+
+    &--robotics {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/directions/3.png'),
+          contain
+        );
+      }
+    }
+
+    &--neurotechnology {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/directions/4.png'),
+          contain
+        );
+      }
+    }
+
+    &--space {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/directions/5.png'),
+          contain
+        );
+      }
+    }
+
+    &--it {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/directions/6.png'),
+          contain
+        );
+      }
+    }
+
+    &--unmanned {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/directions/7.png'),
+          contain
+        );
+      }
+    }
+
+    &--hightech {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/directions/8.png'),
+          contain
+        );
+      }
+    }
+  }
+}

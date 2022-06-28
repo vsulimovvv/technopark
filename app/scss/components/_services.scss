@@ -1,0 +1,92 @@
+.services {
+  padding-top: 20px;
+  @include adaptive-value('padding-bottom', 80, 50, 1);
+
+  &__title {
+    @include fz30();
+    @include adaptive-value('margin-bottom', 80, 50, 1);
+    text-align: center;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+
+    @include breakpointsMaxW($bp-991) {
+      gap: 30px;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 50px 30px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      gap: 40px 15px;
+    }
+  }
+
+  &__text {
+    @include adaptive-value('font-size', 17, 14, 1);
+  }
+
+  &__item {
+    padding-bottom: 40px;
+    position: relative;
+    text-align: center;
+    border-bottom: 5px solid var(--color-dark);
+    @include adaptive-value('padding-top', 80, 65, 1);
+
+    @include breakpointsMaxW($bp-768) {
+      padding-bottom: 20px;
+      border-width: 3px;
+    }
+
+    &::after {
+      @include elDef();
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include adaptive-value('width', 55, 45, 1);
+      @include adaptive-value('height', 55, 45, 1);
+    }
+
+    &--manufacturing {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/services/1.png'),
+          contain
+        );
+      }
+    }
+
+    &--casting {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/services/2.png'),
+          contain
+        );
+      }
+    }
+
+    &--milling {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/services/3.png'),
+          contain
+        );
+      }
+    }
+
+    &--engineering {
+      &::after {
+        @include backgroundImage(
+          url('../images/content/services/1.png'),
+          contain
+        );
+      }
+    }
+  }
+}

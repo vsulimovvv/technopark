@@ -1,0 +1,17 @@
+.about {
+  padding-top: 20px;
+  padding-bottom: 45px;
+
+  &__title {
+    @include fz35();
+    @include adaptive-value('margin-bottom', 35, 23, 1);
+  }
+
+  &__text {
+    line-height: 1.7;
+    
+    p {
+      @include adaptive-value('margin-bottom', 30, 20, 1);
+    }
+  }
+}

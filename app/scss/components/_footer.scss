@@ -1,0 +1,224 @@
+.footer {
+  background-color: var(--color-bg);
+
+  &__logo {
+    margin-bottom: 40px;
+  }
+
+  &__logo-moscow {
+    width: 180px;
+    height: 45px;
+
+    img {
+      @include img(contain);
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    gap: 70px;
+    @include adaptive-value('padding-top', 55, 30, 1);
+    @include adaptive-value('padding-bottom', 40, 30, 1);
+    border-bottom: 1px solid #dedede;
+
+    @include breakpointsMaxW($bp-container) {
+      gap: 50px;
+    }
+
+    @include breakpointsMaxW($bp-991) {
+      grid-template-columns: 1fr;
+      justify-content: space-between;
+    }
+  }
+
+  &__left {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 115px;
+
+    @include breakpointsMaxW($bp-container) {
+      gap: 40px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__right {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 70px;
+
+    @include breakpointsMaxW($bp-container) {
+      gap: 40px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__name {
+    display: block;
+    font-size: 15px;
+    line-height: 1.1;
+    font-weight: 800;
+    color: var(--color-dark);
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #dedede;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px 40px;
+
+    @include breakpointsMaxW($bp-container) {
+      gap: 10px 30px;
+    }
+  }
+
+  &__link {
+    font-size: 14px;
+    line-height: 1.1;
+    font-weight: 400;
+    transition: 200ms ease;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+
+  &__btn {
+    display: block;
+    margin-bottom: 30px;
+    margin-left: auto;
+
+    @include breakpointsMaxW($bp-576) {
+      margin-left: 0;
+    }
+  }
+
+  &__col {
+    &--last {
+      .footer__name {
+        @include breakpointsMaxW($bp-991) {
+          text-align: right;
+        }
+
+        @include breakpointsMaxW($bp-576) {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  &__up {
+    display: block;
+    width: 43px;
+    height: 43px;
+    background-color: #ddddde;
+    border-radius: 5px;
+    transition: 200ms ease;
+    position: relative;
+    margin-left: auto;
+
+    @include breakpointsMaxW($bp-576) {
+      margin-left: 0;
+    }
+
+    &::after {
+      @include elDef();
+      width: 18px;
+      height: 18px;
+      top: 50%;
+      left: 50%;
+      @include maskImage(url('../images/icons/arrow-up.svg'), contain);
+      transform: translate(-50%, -50%) rotate(-90deg);
+      background-color: var(--color-dark);
+      transition: 200ms ease;
+    }
+
+    &:hover {
+      background-color: var(--color-accent);
+
+      &::after {
+        background-color: var(--color-white);
+      }
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+
+  &__bottom {
+    font-size: 13px;
+    line-height: 1;
+    padding: 20px 0;
+  }
+
+  .footer-contacts {
+    display: grid;
+    gap: 20px;
+
+    &__item {
+      position: relative;
+      padding-left: 32px;
+      font-size: 14px;
+      line-height: 1;
+
+      &::after {
+        @include elDef();
+        width: 16px;
+        height: 16px;
+        top: 0;
+        left: 0;
+        background-color: #7c7a98;
+      }
+
+      &--mail {
+        &::after {
+          @include maskImage(url('../images/icons/mail.svg'), contain);
+        }
+
+        transition: 200ms ease;
+          
+        &:hover {
+          color: var(--color-accent);
+        }
+      }
+
+      &--location {
+        &::after {
+          @include maskImage(url('../images/icons/location.svg'), contain);
+        }
+      }
+
+      &--phone {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        a {
+          font-size: 18px;
+          font-weight: 700;
+          font-family: $TTCommons;
+          transition: 200ms ease;
+
+          &:hover {
+            color: var(--color-accent);
+          }
+        }
+
+        &::after {
+          @include maskImage(url('../images/icons/phone-2.svg'), contain);
+        }
+      }
+    }
+  }
+}

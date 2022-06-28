@@ -1,0 +1,54 @@
+.support {
+  @include background(cover);
+  @include adaptive-value('padding-top', 80, 50, 1);
+  @include adaptive-value('padding-bottom', 200, 100, 1);
+  margin-top: -100px;
+
+  &__offer {
+    color: var(--color-white);
+    margin: 0 auto;
+    max-width: 400px;
+    @include adaptive-value('margin-bottom', 70, 40, 1);
+  }
+
+  &__title {
+    @include fz40();
+    color: var(--color-white);
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  &__slide {
+    max-width: 605px;
+    box-sizing: border-box;
+    height: 100%;
+  }
+
+  &__slides {
+    @include adaptive-value('margin-bottom', 50, 30, 1);
+  }
+
+  &__slider {
+    @include adaptive-value('margin-bottom', 50, 40, 1);
+  }
+
+  &__arrows {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    width: 150px;
+    margin: 0 auto;
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      &::after {
+        background-color: var(--color-white);
+      }
+    }
+  }
+}

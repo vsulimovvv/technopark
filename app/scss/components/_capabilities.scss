@@ -1,0 +1,23 @@
+.capabilities {
+  @include adaptive-value('padding-top', 120, 70, 1);
+  @include adaptive-value('padding-bottom', 80, 50, 1);
+  // margin-top: -200px;
+
+@include breakpointsMaxW($bp-container){
+
+}
+
+  @include breakpointsMaxW($bp-991) {
+    padding-top: 70px;
+  }
+
+  @include breakpointsMaxW($bp-768) {
+    margin-top: -250px;
+  }
+
+  &__title {
+    @include fz40();
+    text-align: center;
+    @include adaptive-value('margin-bottom', 65, 50, 1);
+  }
+}

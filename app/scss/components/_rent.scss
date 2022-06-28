@@ -1,0 +1,126 @@
+.rent {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+    gap: 50px;
+
+    @include breakpointsMaxW($bp-991) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  
+  &__title {
+    @include fz30();
+    font-weight: 400;
+    line-height: 1.4;
+    padding-left: 80px;
+    position: relative;
+    @include adaptive-value('margin-bottom', 40, 30, 1);
+
+    @include breakpointsMaxW($bp-576) {
+      padding-left: 60px;
+    }
+
+    &::after {
+      @include elDef();
+      content: '01';
+      width: 55px;
+      height: 55px;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(90deg, #f9a31e -24%, #f47921 126%);
+      box-shadow: 0px 14px 38px 0px rgba(249, 163, 30, 0.56);
+      border-radius: 50%;
+      color: var(--color-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 300;
+      font-family: $Montserrat;
+
+      @include breakpointsMaxW($bp-576) {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 13px;
+    font-weight: 400;
+    color: #a6a6a6;
+    max-width: 230px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 60px;
+
+    @include breakpointsMaxW($bp-container) {
+      gap: 30px;
+    }
+    
+    @include breakpointsMaxW($bp-576) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .rent-item {
+    &:not(:last-child) {
+      padding-right: 70px;
+      border-right: 5px solid #f7f7fa;
+
+      @include breakpointsMaxW($bp-container) {
+        padding-right: 40px;
+      }
+    }
+
+    &__title {
+      @include adaptive-value('font-size', 22, 18, 1);
+      @include adaptive-value('margin-bottom', 30, 20, 1);
+      line-height: 1;
+      font-weight: 500;
+      color: var(--color-dark);
+    }
+
+    &__item {
+      padding: 10px 0;
+      position: relative;
+      padding-left: 35px;
+
+      &::before {
+        @include elDef();
+        width: calc(100% - 35px);
+        background-color: #eceef7;
+        bottom: 0;
+        left: 35px;
+        height: 1px;
+      }
+
+      &::after {
+        @include elDef();
+        width: 21px;
+        height: 21px;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        @include backgroundImage(
+          url('../images/content/check-light.png'),
+          contain
+        );
+      }
+
+      &:last-child {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+}

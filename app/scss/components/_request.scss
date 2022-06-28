@@ -1,0 +1,116 @@
+.request {
+  @include adaptive-value('padding-bottom', 80, 50, 1);
+  background-image: url('../images/content/decor.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 200px;
+  padding-bottom: 100px;
+  z-index: 1;
+
+  &__title {
+    @include fz40();
+    @include adaptive-value('margin-bottom', 35, 25, 1);
+
+    @include breakpointsMaxW($bp-991) {
+      text-align: center;
+    }
+  }
+
+  &__text {
+    font-size: 17px;
+    color: #615e70;
+    @include adaptive-value('margin-bottom', 50, 30, 1);
+
+    @include breakpointsMaxW($bp-991) {
+      text-align: center;
+    }
+  }
+
+  &__form {
+    max-width: 575px;
+    width: 100%;
+
+    @include breakpointsMaxW($bp-991) {
+      margin: 0 auto;
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    align-items: center;
+
+    @include breakpointsMaxW($bp-991) {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+  }
+
+  &__preview {
+    max-width: 660px;
+    width: 100%;
+    @include background(contain);
+    @include adaptive-value('height', 575, 300, 1);
+
+    @include breakpointsMaxW($bp-991) {
+      margin: 0 auto;
+    }
+  }
+}
+
+.form-submit {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px 12px;
+
+  @include breakpointsMaxW($bp-768) {
+    gap: 10px;
+  }
+
+  &__group {
+    width: 100%;
+  }
+
+  &__bottom {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 12px;
+    margin-top: 15px;
+
+    @include breakpointsMaxW($bp-576) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    height: 55px;
+    background-color: var(--color-white);
+    border: 3px solid #f1f1f2;
+    border-radius: 10px;
+    padding: 10px 30px;
+    font-size: 17px;
+    line-height: 1;
+
+    @include breakpointsMaxW($bp-768) {
+      font-size: 15px;
+      padding: 10px 15px;
+    }
+
+    &::placeholder {
+      color: #8e8d98;
+    }
+  }
+
+  &__btn {
+    height: 55px;
+    font-size: 17px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+  }
+}

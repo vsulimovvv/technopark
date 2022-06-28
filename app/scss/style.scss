@@ -1,0 +1,45 @@
+@import 'libs';
+@import 'reset';
+@import 'vars';
+@import 'mixins';
+@import 'fonts';
+@import 'global';
+
+@import './animations';
+
+// * ===== Other components
+@import './components/breadcrumbs';
+@import './components/swiper-options';
+@import './components/custom-checkbox';
+@import './components/popups';
+@import './components/menu-mobile';
+@import './components/menu';
+
+// * ===== Card Components
+
+// * ===== Section Components
+@import './components/footer';
+@import './components/header';
+@import './components/hero';
+@import './components/contacts';
+@import './components/about';
+@import './components/numbers';
+@import './components/team';
+@import './components/news';
+@import './components/residents';
+@import './components/resident';
+@import './components/additive';
+@import './components/equipment';
+@import './components/services';
+@import './components/childrens';
+@import './components/directions';
+@import './components/events';
+@import './components/production';
+@import './components/wait';
+@import './components/request';
+@import './components/support';
+@import './components/news-section';
+@import './components/capabilities';
+@import './components/rent';
+@import './components/infrastructure';
+@import './components/children-section';

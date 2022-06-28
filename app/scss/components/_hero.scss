@@ -1,0 +1,130 @@
+.hero {
+  padding-top: 65px;
+  position: relative;
+
+  &__title {
+    @include adaptive-value('font-size', 60, 30, 1);
+    color: var(--color-dark);
+    line-height: 1.15;
+    margin-bottom: 30px;
+    font-weight: 800;
+
+    span {
+      color: #9693ac;
+      position: relative;
+      display: inline-block;
+      padding-left: 65px;
+      @include adaptive-value('padding-left', 65, 33, 1);
+
+      &::after {
+        @include elDef();
+        height: 40px;
+        @include adaptive-value('width', 60, 30, 1);
+        @include backgroundImage(url('../images/logo-gray.png'), contain);
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+      }
+    }
+  }
+
+  &__text {
+    @include adaptive-value('margin-bottom', 50, 30, 1);
+  }
+
+  &__offer {
+    max-width: 500px;
+
+    @include breakpointsMaxW($bp-991) {
+      max-width: 100%;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    @include breakpointsMaxW($bp-576) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__btn {
+    position: relative;
+    padding: 20px 70px 20px 30px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 27px;
+
+    @include breakpointsMaxW($bp-576) {
+      width: 230px;
+      padding-right: 50px;
+    }
+
+    .hero__btn-icon {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 33px;
+      height: 33px;
+      border-radius: 50%;
+      background-color: #eff1f4;
+
+      &::after {
+        @include elDef();
+        width: 13px;
+        height: 13px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include maskImage(url('../images/icons/plus.svg'), contain);
+        background-color: #7d7998;
+      }
+    }
+
+    &.btn--white {
+      box-shadow: 0px 14px 38px 0px rgba(206, 206, 206, 0.56);
+    }
+
+    &--arrow {
+      &::after {
+        @include elDef();
+        @include maskImage(url('../images/content/arrow-right.png'), contain);
+        background-color: var(--color-white);
+        width: 20px;
+        height: 20px;
+        transform: translateY(-50%);
+        top: 50%;
+        right: 22px;
+      }
+    }
+  }
+
+  &__preview {
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%);
+    right: 0;
+    width: 900px;
+    height: 600px;
+    @include background(contain);
+    right: max(15px, calc((100% - 1640px) / 2));
+
+    @include breakpointsMaxW(1640px) {
+      width: calc(450px + (900 - 450) * ((100vw - 991px) / (1640 - 991)));
+    }
+
+    @include breakpointsMaxW($bp-991) {
+      position: static;
+      margin: 0 auto;
+      max-width: 600px;
+      margin-top: 50px;
+      width: calc(100% - 30px);
+      height: calc(250px + (600 - 250) * ((100vw - 360px) / (991 - 360)));
+      transform: translateY(0);
+    }
+  }
+}

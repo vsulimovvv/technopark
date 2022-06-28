@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<!-- nouislider -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.css"
+/>
+
+<!-- simplebar -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/simplebar/5.3.8/simplebar.min.css"
+/>
+
+
+<!-- fancybox -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
+/>
+
+<!-- Nice Select -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css"
+/>
+
+<!-- Custom Link -->
+<link rel="stylesheet" href="css/style.min.css" />
+
+
+    <title>Мосгормаш</title>
+  </head>
+
+  <body>
+    <div class="popup popup--service">
+  <div class="popup__container">
+    <button class="popup__close" type="button" aria-label="Закрыть">
+      <svg width="15" height="15">
+        <use xlink:href="images/sprite.svg#close"></use>
+      </svg>
+    </button>
+    <div class="popup__wrapper">
+      <h2 class="popup__title">Заявка на услугу “Испытательный комплекс”</h2>
+      <div class="popup__text">
+        <p>Оставьте ваши данные и мы вам перезвоним.</p>
+      </div>
+
+      <form class="request__form form-submit">
+        <div class="form-submit__group">
+          <label class="form-submit__label" for="service-name">Имя</label>
+          <div class="form-submit__input-wrap form-submit__input-wrap--name">
+            <input
+              class="form-submit__input"
+              name="name"
+              id="service-name"
+              type="text"
+              placeholder="Введите ваше имя"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-submit__group">
+          <label class="form-submit__label" for="service-tel">
+            Контактный телефон
+          </label>
+          <div class="form-submit__input-wrap form-submit__input-wrap--phone">
+            <input
+              class="form-submit__input"
+              name="tel"
+              id="service-tel"
+              type="tel"
+              placeholder="+7 (___) ___-__-__"
+              required
+            />
+          </div>
+        </div>
+
+        <button class="form-submit__btn btn" type="button">
+          Заказать звонок
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="popup popup--product">
+  <div class="popup__container">
+    <button class="popup__close" type="button" aria-label="Закрыть">
+      <svg width="15" height="15">
+        <use xlink:href="images/sprite.svg#close"></use>
+      </svg>
+    </button>
+    <div class="popup__wrapper">
+      <h2 class="popup__title">Заказ насоса ДГН СЕРИЯ</h2>
+      <div class="popup__text">
+        <p>Оставьте ваши данные и мы вам перезвоним.</p>
+      </div>
+
+      <form class="request__form form-submit">
+        <div class="form-submit__group">
+          <label class="form-submit__label" for="product-name">Имя</label>
+          <div class="form-submit__input-wrap form-submit__input-wrap--name">
+            <input
+              class="form-submit__input"
+              name="name"
+              id="product-name"
+              type="text"
+              placeholder="Введите ваше имя"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-submit__group">
+          <label class="form-submit__label" for="product-tel">
+            Контактный телефон
+          </label>
+          <div class="form-submit__input-wrap form-submit__input-wrap--phone">
+            <input
+              class="form-submit__input"
+              name="tel"
+              id="product-tel"
+              type="tel"
+              placeholder="+7 (___) ___-__-__"
+              required
+            />
+          </div>
+        </div>
+
+        <button class="form-submit__btn btn" type="button">
+          Заказать звонок
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="popup popup--consultation">
+  <div class="popup__container">
+    <button class="popup__close" type="button" aria-label="Закрыть">
+      <svg width="15" height="15">
+        <use xlink:href="images/sprite.svg#close"></use>
+      </svg>
+    </button>
+    <div class="popup__wrapper">
+      <h2 class="popup__title">Заказать консультацию</h2>
+      <div class="popup__text">
+        <p>Оставьте ваши данные и мы вам перезвоним.</p>
+      </div>
+
+      <form class="request__form form-submit">
+        <div class="form-submit__group">
+          <label class="form-submit__label" for="consultation-name">Имя</label>
+          <div class="form-submit__input-wrap form-submit__input-wrap--name">
+            <input
+              class="form-submit__input"
+              name="name"
+              id="consultation-name"
+              type="text"
+              placeholder="Введите ваше имя"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-submit__group">
+          <label class="form-submit__label" for="consultation-tel">
+            Контактный телефон
+          </label>
+          <div class="form-submit__input-wrap form-submit__input-wrap--phone">
+            <input
+              class="form-submit__input"
+              name="tel"
+              id="consultation-tel"
+              type="tel"
+              placeholder="+7 (___) ___-__-__"
+              required
+            />
+          </div>
+        </div>
+
+        <button class="form-submit__btn btn" type="button">
+          Заказать звонок
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+    <h1 class="visually-hidden">Главная</h1>
+
+    <div class="site-wrapper">
+      <header class="header">
+  <header class="header">
+    <!--* Mobile Menu -->
+
+    <div class="overlay"></div>
+
+    <div class="mobile-menu">
+      <a class="mobile-menu__logo logo" href="#">
+        <img src="images/logo.png" alt="Логотип" />
+      </a>
+
+      <button
+        class="mobile-menu__close"
+        type="button"
+        aria-label="Закрыть меню"
+      >
+        <svg width="19" height="19">
+          <use xlink:href="images/sprite.svg#close"></use>
+        </svg>
+      </button>
+
+      <ul class="mobile-menu__body">
+        <li class="mobile-menu__item">
+          <a class="mobile-menu__link" href="#">О нас </a>
+        </li>
+        <li class="mobile-menu__item">
+          <a class="mobile-menu__link" href="#">Детский технопарк</a>
+        </li>
+        <li class="mobile-menu__item">
+          <a class="mobile-menu__link" href="#">Новости</a>
+        </li>
+        <li class="mobile-menu__item">
+          <a class="mobile-menu__link" href="#">Резиденты</a>
+        </li>
+        <li class="mobile-menu__item">
+          <a class="mobile-menu__link" href="#">Контакты</a>
+        </li>
+      </ul>
+    </div>
+
+    <!--* Mobile Menu -->
+
+    <div class="header__top">
+      <div class="container">
+        <div class="header__top-inner">
+          <a class="img" href="index.html">
+            <img src="images/logo.png" alt="Логотип" />
+          </a>
+
+          <button
+            class="header__toggle"
+            type="button"
+            aria-label="Открыть меню"
+          >
+            <span class="header__toggle-line"></span>
+          </button>
+
+          <ul class="header__list">
+            <li class="header__item header__item--phone">
+              <span class="header__text">связаться с нами</span>
+              <a class="header__link" href="tel:+74952366957"
+                >+7 (495) 236-69-57</a
+              >
+            </li>
+            <li class="header__item header__item--address">
+              <span class="header__text"> наш адрес</span>
+              <address class="header__address">
+                Москва, Каширский Проезд 13
+              </address>
+            </li>
+            <li class="header__item header__item--email">
+              <span class="header__text"> e-mail</span>
+              <a class="header__link" href="mailto:office@tpmgm.ru">
+                office@tpmgm.ru
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="header__bottom">
+      <div class="container">
+        <nav class="header__menu menu">
+          <ul class="menu__list">
+            <li class="menu__item">
+              <a class="menu__link" href="#">О нас</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">Детский технопарк</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">Новости</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">Резиденты</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+</header>
+
+
+      <main class="main">
+        <section class="childrens">
+  <div class="container">
+    <h2 class="childrens__title">Детский технопарк</h2>
+
+    <div class="childrens__box">
+      <div class="childrens__info">
+        <div class="childrens__contact">
+          <a class="childrens__link childrens__link--clock"> 9:00—20:00 </a>
+          <a
+            class="childrens__link childrens__link--phone"
+            href="tel:+74953800515"
+          >
+            +7 (495) 380-05-15
+          </a>
+        </div>
+
+        <div class="childrens__text">
+          <p>
+            Первый московский детский технопарк был открыт в мае 2016 года.
+            Детский технопарк «Мосгормаш» – это площадка, оснащенная
+            высокотехнологичным оборудованием, нацеленная на подготовку новых
+            высококвалифицированных инженерных кадров, разработку, тестирование
+            и внедрение инновационных технологий и идей, пространство
+            интеллектуальной смелости, среда ускоренного развития технических
+            способностей учащихся образовательных организаций города Москвы от
+            14 до 18 лет. Площадь детского технопарка «Мосгормаш» 846 кв.м.
+            Занятия в детском технопарке проводятся по следующим направлениям:
+            «Геоинформатика», «Виртуальная и дополненная реальность»,
+            «Робототехника», «Нейротехнологии», «Современная космонавтика»,
+            «Информационные технологии», «Беспилотный транспорт» и «Хайтек», в
+            том числе по интеграционным программам, направленным на развитие
+            межпредметных компетенций и освоения комплекса неспециализированных,
+            важных для карьеры надпрофессиональных навыков (Soft skills, или
+            гибкие навыки).
+          </p>
+        </div>
+      </div>
+      <div class="childrens__img">
+        <img src="images/content/childrens/1.jpg" alt="Детский технопарк" />
+      </div>
+    </div>
+
+    <div class="childrens__box childrens__box--reverse">
+      <div class="childrens__text">
+        <p>
+          В 2020 году АНО «Развитие человеческого капитала» с базовой площадкой
+          – Детский технопарк «Мосгормаш» стал Региональным ресурсным центром по
+          подготовке и проведению региональных этапов Всероссийского чемпионата
+          FIRST RUSSIA ROBOTICS CHAMPIONSHIP для команд Москвы и Московской
+          области (выделение квот на участие в национальном чемпионате FIRST
+          RUSSIA ROBOTICS CHAMPIONSHIP на сезон 2020/2021, победители финала
+          получают квоты на участие в международных соревнованиях). FIRST Lego
+          League – это программа глобальных робототехнических STEAM соревнований
+          с использованием оборудования Lego Education. FIRST помогает юным
+          инженерам раскрыть творческий потенциал, учит командной работе, даёт
+          уникальные возможности профессионального и личностного роста. Открыт
+          набор в группы по робототехнике для слушателей в возрасте от 4 до 16
+          лет для подготовки к участию в соревнованиях FIRST RUSSIA ROBOTICS
+          CHAMPIONSHIP. Все занятия в детском технопарке бесплатные, по
+          предварительной записи.
+        </p>
+      </div>
+      <div class="childrens__img">
+        <img src="images/content/childrens/2.jpg" alt="Детский технопарк" />
+      </div>
+    </div>
+  </div>
+</section>
+
+        <section class="directions">
+  <div class="container">
+    <h2 class="directions__title">Направления занятий</h2>
+
+    <ul class="directions__list">
+      <li class="directions__item directions__item--geoinformatics">
+        <p class="directions__text">
+          Геоинформатика
+        </p>
+      </li>
+      <li class="directions__item directions__item--virtual">
+        <p class="directions__text">
+          Виртуальная и <br />
+          дополненная реальность
+        </p>
+      </li>
+      <li class="directions__item directions__item--robotics">
+        <p class="directions__text">
+          Робототехника
+        </p>
+      </li>
+      <li class="directions__item directions__item--neurotechnology">
+        <p class="directions__text">Нейротехнологии</p>
+      </li>
+      <li class="directions__item directions__item--space">
+        <p class="directions__text">
+          Современная <br>
+космонавтика
+        </p>
+      </li>
+      <li class="directions__item directions__item--it">
+        <p class="directions__text">
+          Информационные <br>
+          технологии
+        </p>
+      </li>
+      <li class="directions__item directions__item--unmanned">
+        <p class="directions__text">
+          Беспилотный <br>
+          транспорт
+        </p>
+      </li>
+      <li class="directions__item directions__item--hightech">
+        <p class="directions__text">Хайтек</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+        <section class="events">
+  <div class="container">
+    <h2 class="events__title">Как проходят мероприятия</h2>
+
+    <ul class="events__list">
+      <li
+        class="events__item"
+        data-fancybox="gallery"
+        data-src="images/content/events/1.jpg"
+        data-caption="Hello world"
+      >
+        <img src="images/content/events/1.jpg" alt="мероприятие" />
+      </li>
+      <li
+        class="events__item events__item--small"
+        data-fancybox="gallery"
+        data-src="images/content/events/2.jpg"
+        data-caption="Hello world"
+      >
+        <img src="images/content/events/2.jpg" alt="мероприятие" />
+      </li>
+      <li
+        class="events__item events__item--small"
+        data-fancybox="gallery"
+        data-src="images/content/events/3.jpg"
+        data-caption="Hello world"
+      >
+        <img src="images/content/events/3.jpg" alt="мероприятие" />
+      </li>
+      <li
+        class="events__item"
+        data-fancybox="gallery"
+        data-src="images/content/events/4.jpg"
+        data-caption="Hello world"
+      >
+        <img src="images/content/events/4.jpg" alt="мероприятие" />
+      </li>
+      <li
+        class="events__item"
+        data-fancybox="gallery"
+        data-src="images/content/events/5.jpg"
+        data-caption="Hello world"
+      >
+        <img src="images/content/events/5.jpg" alt="мероприятие" />
+      </li>
+      <li
+        class="events__item events__item--small"
+        data-fancybox="gallery"
+        data-src="images/content/events/6.jpg"
+        data-caption="Hello world"
+      >
+        <img src="images/content/events/6.jpg" alt="мероприятие" />
+      </li>
+      <li
+        class="events__item events__item--small"
+        data-fancybox="gallery"
+        data-src="images/content/events/7.jpg"
+        data-caption="Hello world"
+      >
+        <img src="images/content/events/7.jpg" alt="мероприятие" />
+      </li>
+      <li
+        class="events__item"
+        data-fancybox="gallery"
+        data-src="images/content/events/8.jpg"
+        data-caption="Hello world"
+      >
+        <img src="images/content/events/8.jpg" alt="мероприятие" />
+      </li>
+    </ul>
+
+    <button class="events__btn">показать еще</button>
+  </div>
+</section>
+
+      </main>
+      <footer class="footer">
+  <div class="container">
+    <div class="footer__wrapper">
+      <div class="footer__left">
+        <div class="footer__col">
+          <a class="footer__logo logo" href="index.html">
+            <img src="images/logo.png" alt="" />
+          </a>
+          <div class="footer__logo-moscow">
+            <img src="images/logo-moscow.png" alt="" />
+          </div>
+        </div>
+        <div class="footer__col">
+          <span class="footer__name">КОМПАНИЯ</span>
+
+          <ul class="footer__list">
+            <li class="footer__item">
+              <a class="footer__link" href="#">О нас</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="#">Резиденты</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="#">Детский технопарк</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="#">Контакты</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="#">Новости</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__right">
+        <div class="footer__col">
+          <span class="footer__name">КОНТАКТЫ</span>
+
+          <ul class="footer-contacts">
+            <li class="footer-contacts__item footer-contacts__item--location">
+              <address>Москва, Каширский проезд 13</address>
+            </li>
+            <li class="footer-contacts__item footer-contacts__item--phone">
+              <span>Управляющая компания</span>
+              <a href="tel:+74952366957">+7 495 236-69-57</a>
+            </li>
+            <li class="footer-contacts__item footer-contacts__item--mail">
+              <a href="mailto:office@tpmgm.ru">office@tpmgm.ru</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__col footer__col--last">
+          <span class="footer__name">ОБРАТНАЯ СВЯЗЬ</span>
+
+          <button class="footer__btn btn btn--white" type="button">
+            Написать нам
+          </button>
+
+          <a class="footer__up" href="#" aria-label="Наверх"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2022 Технопарк Мосгормаш. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+
+    <!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- nouislider -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.js"></script>
+
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Input Mask -->
+<script
+  src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js"
+  type="text/javascript"
+></script>
+
+<!-- fancybox -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+<!-- simplebar -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/simplebar/5.3.8/simplebar.min.js"></script>
+
+<!-- mixitup -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
+
+<!-- Nice Select -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+
+<!-- JS -->
+<script src="js/main.min.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,282 @@
+.infrastructure {
+  @include adaptive-value('padding-top', 120, 70, 1);
+  background-image: url('../images/content/decor-infrastructure.png');
+  @include background(cover);
+  padding-bottom: 210px;
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    @include elDef();
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 260px;
+    z-index: -1;
+
+    @include backgroundImage(
+      url('../images/content/decor-infrastructure-bottom.png'),
+      cover
+    );
+
+    // @include breakpointsMaxW(1980px) {
+    //   display: block;
+    //   height: calc(80px + (30 - 80) * ((100vw - 1440px) / (1980 - 1440)));
+    // }
+
+    // @include breakpointsMaxW(1440px) {
+    //   height: 60px;
+    // }
+  }
+
+  .tabs {
+    &-content {
+      display: none;
+
+      &.active {
+        display: block;
+        animation: opacity-visibility 700ms ease;
+      }
+    }
+  }
+
+  &__title {
+    @include fz30();
+    font-weight: 400;
+    line-height: 1.4;
+    padding-left: 80px;
+    position: relative;
+    @include adaptive-value('margin-bottom', 100, 60, 1);
+
+    @include breakpointsMaxW($bp-576) {
+      padding-left: 60px;
+    }
+
+    &::after {
+      @include elDef();
+      content: '02';
+      width: 55px;
+      height: 55px;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(90deg, #f9a31e -24%, #f47921 126%);
+      box-shadow: 0px 14px 38px 0px rgba(249, 163, 30, 0.56);
+      border-radius: 50%;
+      color: var(--color-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 300;
+      font-family: $Montserrat;
+
+      @include breakpointsMaxW($bp-576) {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 40px;
+
+    @include breakpointsMaxW($bp-container) {
+      gap: 20px;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+  }
+
+  &__left {
+    padding-right: 60px;
+    overflow-y: auto;
+    width: 270px;
+    height: 280px;
+
+    @include breakpointsMaxW($bp-container) {
+      padding-right: 30px;
+      width: 240px;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      width: 100%;
+    }
+
+    .simplebar-track {
+      background-color: #e9e8f1;
+    }
+
+    .simplebar-scrollbar::before {
+      background-color: #9693ac;
+    }
+
+    &-list {
+      display: grid;
+      @include adaptive-value('gap', 40, 30, 1);
+      height: 280px;
+    }
+
+    &-btn {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transition: 200ms ease;
+
+      &.tabs-btn--active {
+        color: #9693ac;
+
+        .icon {
+          background-color: #9693ac;
+
+          &::after {
+            background-color: var(--color-white);
+          }
+        }
+      }
+
+      &:hover {
+        color: #9693ac;
+
+        .icon {
+          background-color: #9693ac;
+
+          &::after {
+            background-color: var(--color-white);
+          }
+        }
+      }
+
+      .icon {
+        width: 38px;
+        height: 38px;
+        background-color: #e9e8f1;
+        border-radius: 50%;
+        position: relative;
+        transition: 200ms ease;
+
+        &::after {
+          @include elDef();
+          background-color: #9693ac;
+          width: 16px;
+          height: 16px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: 200ms ease;
+        }
+      }
+
+      &--fitness {
+        .icon {
+          &::after {
+            @include maskImage(
+              url('../images/content/infrastructure/fitness.png'),
+              contain
+            );
+          }
+        }
+      }
+      &--coffee {
+        .icon {
+          &::after {
+            @include maskImage(
+              url('../images/content/infrastructure/coffee.png'),
+              contain
+            );
+          }
+        }
+      }
+      &--milling-machine {
+        .icon {
+          &::after {
+            @include maskImage(
+              url('../images/content/infrastructure/milling-machine.png'),
+              contain
+            );
+          }
+        }
+      }
+      &--meeting {
+        .icon {
+          &::after {
+            @include maskImage(
+              url('../images/content/infrastructure/meeting.png'),
+              contain
+            );
+          }
+        }
+      }
+    }
+  }
+
+  &__right {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 40px;
+    align-items: center;
+
+    @include breakpointsMaxW($bp-container) {
+      gap: 20px;
+    }
+
+    @include breakpointsMaxW($bp-991) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__imgs {
+    max-width: 580px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    min-width: 450px;
+
+    @include breakpointsMaxW($bp-container) {
+      gap: 10px;
+    }
+
+    @include breakpointsMaxW($bp-container) {
+      min-width: auto;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 280px;
+    cursor: pointer;
+
+    @include breakpointsMaxW($bp-768) {
+      height: calc(150px + (280 - 150) * ((100vw - 360px) / (768 - 360)));
+    }
+
+    img {
+      border-radius: 10px;
+      @include img(cover);
+    }
+  }
+
+  &__offer {
+    max-width: 320px;
+    width: 100%;
+  }
+
+  &__heading {
+    @include fz30();
+    font-weight: 800;
+    margin-bottom: 25px;
+  }
+
+  &__text {
+    font-size: 14px;
+    color: #585858;
+    margin-bottom: 35px;
+  }
+}

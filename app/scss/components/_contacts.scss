@@ -1,0 +1,138 @@
+.contacts {
+  position: relative;
+  padding-top: 50px;
+  @include adaptive-value('padding-bottom', 60, 30, 1);
+  min-height: 480px;
+  color: var(--color-dark);
+
+  @include breakpointsMaxW($bp-768) {
+    padding-bottom: calc(450px + (550 - 450) * ((100vw - 360px) / (768 - 360)));
+  }
+
+  &__offer {
+    max-width: 350px;
+    @include adaptive-value('padding-top', 55, 30, 1);
+
+    @include breakpointsMaxW($bp-768) {
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    @include adaptive-value('margin-bottom', 55, 35, 1);
+    @include fz35();
+  }
+
+  &__address {
+    margin-bottom: 40px;
+  }
+
+  &__phone {
+    font-size: 30px;
+    line-height: 1;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 30px;
+    display: block;
+    font-family: $Montserrat;
+    font-weight: 700;
+
+    a {
+      transition: 150ms ease;
+
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
+  }
+
+  &__phones {
+    margin-bottom: 40px;
+    line-height: 2;
+
+    a {
+      transition: 150ms ease;
+      font-family: $Montserrat;
+      font-weight: 400;
+
+      &:hover {
+        color: var(--color-accent);
+      }
+    }
+  }
+
+  &__mail {
+    color: var(--color-accent);
+    font-size: 18px;
+    font-weight: 500;
+    color: #d9792d;
+    margin-bottom: 50px;
+    display: block;
+  }
+
+  &__btns {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 17px;
+    @include adaptive-value('margin-bottom', 50, 30, 1);
+
+    @include breakpointsMaxW($bp-360) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__btn {
+    max-width: 270px;
+    width: 100%;
+    height: 50px;
+    font-weight: 500;
+
+    &.btn--white {
+      border: 1px solid var(--color-accent);
+    }
+  }
+
+  &__map {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 480px;
+    width: 62%;
+    border-radius: 50px 0px 0px 50px;
+    z-index: 1;
+
+    &::after {
+      @include elDef();
+      width: 100%;
+      height: 100%;
+      background-color: #d1cfe1;
+      border-radius: 50px 0px 0px 50px;
+      left: -20px;
+      bottom: -20px;
+      z-index: -1;
+
+      @include breakpointsMaxW($bp-768) {
+        display: none;
+      }
+    }
+
+    @include breakpointsMaxW($bp-991) {
+      width: 50%;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      height: calc(350px + (450 - 350) * ((100vw - 375px) / (768 - 375)));
+      width: 100%;
+      top: initial;
+      transform: translateY(0);
+      bottom: 70px;
+    }
+
+    iframe {
+      border-radius: 50px 0px 0px 50px;
+    }
+  }
+}
