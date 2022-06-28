@@ -10,7 +10,6 @@
     }
   }
 
-  
   &__title {
     @include fz30();
     font-weight: 400;
@@ -50,6 +49,13 @@
     }
   }
 
+  &__offer {
+    @include breakpointsMaxW($bp-768) {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  }
+
   &__text {
     font-size: 13px;
     font-weight: 400;
@@ -65,7 +71,7 @@
     @include breakpointsMaxW($bp-container) {
       gap: 30px;
     }
-    
+
     @include breakpointsMaxW($bp-576) {
       grid-template-columns: 1fr;
     }
@@ -75,6 +81,11 @@
     &:not(:last-child) {
       padding-right: 70px;
       border-right: 5px solid #f7f7fa;
+
+      @include breakpointsMaxW($bp-576) {
+        padding-right: 0;
+        border-right: none;
+      }
 
       @include breakpointsMaxW($bp-container) {
         padding-right: 40px;

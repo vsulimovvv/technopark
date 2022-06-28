@@ -5,6 +5,11 @@ window.addEventListener('DOMContentLoaded', () => {
   // * ===== Custom select
   $('select').niceSelect();
 
+  // * ===== datepicker
+  $(function () {
+    $('#datepicker').datepicker();
+  });
+
   // * ===== Slider
   (function slider() {
     const sliderEl = document.querySelectorAll('.production__slider');
@@ -66,6 +71,14 @@ window.addEventListener('DOMContentLoaded', () => {
           '.news-section__content .swiper-button-prev'
         ),
       },
+      breakpoints: {
+        320: {
+          spaceBetween: 20,
+        },
+        991: {
+          spaceBetween: 80,
+        },
+      },
     });
   })();
 
@@ -119,42 +132,40 @@ window.addEventListener('DOMContentLoaded', () => {
     header.classList.add('scroll-header');
   }
 
-  // // * ===== Modal
-  // (function modals() {
-  //   function bindModal(openBtn, modal, close) {
-  //     const openBtnEl = document.querySelectorAll(openBtn);
-  //     const modalEl = document.querySelector(modal);
-  //     const closeEl = document.querySelectorAll(close);
-  //     const body = document.querySelector('body');
-  //     if (modalEl) {
-  //       openBtnEl.forEach((el) => {
-  //         el.addEventListener('click', (e) => {
-  //           if (e.target) {
-  //             e.preventDefault();
-  //           }
-  //           modalEl.classList.add('active');
-  //           body.classList.add('no-scroll');
-  //         });
-  //       });
-  //       closeEl.forEach((btn) => {
-  //         btn.addEventListener('click', (e) => {
-  //           modalEl.classList.remove('active');
-  //           body.classList.remove('no-scroll');
-  //         });
-  //       });
-  //       modalEl.addEventListener('click', (e) => {
-  //         if (e.target === modalEl) {
-  //           modalEl.classList.remove('active');
-  //           body.classList.remove('no-scroll');
-  //         }
-  //       });
-  //     }
-  //   }
-  //   bindModal('.download__btn', '.popup--download', '.popup__close');
-  //   bindModal('.header__favorite', '.popup--card-object', '.popup__close');
-  //   bindModal('.get-presentation', '.popup--get-info', '.popup__close');
-  //   bindModal('.presentation__download', '.popup--get-info', '.popup__close');
-  // })();
+  // * ===== Modal
+  (function modals() {
+    function bindModal(openBtn, modal, close) {
+      const openBtnEl = document.querySelectorAll(openBtn);
+      const modalEl = document.querySelector(modal);
+      const closeEl = document.querySelectorAll(close);
+      const body = document.querySelector('body');
+      if (modalEl) {
+        openBtnEl.forEach((el) => {
+          el.addEventListener('click', (e) => {
+            if (e.target) {
+              e.preventDefault();
+            }
+            modalEl.classList.add('active');
+            body.classList.add('no-scroll');
+          });
+        });
+        closeEl.forEach((btn) => {
+          btn.addEventListener('click', (e) => {
+            modalEl.classList.remove('active');
+            body.classList.remove('no-scroll');
+          });
+        });
+        modalEl.addEventListener('click', (e) => {
+          if (e.target === modalEl) {
+            modalEl.classList.remove('active');
+            body.classList.remove('no-scroll');
+          }
+        });
+      }
+    }
+    bindModal('.infrastructure__btn', '.popup--event', '.popup__close');
+    bindModal('.contact-btn', '.popup--contact', '.popup__close');
+  })();
 
   // * ===== Toggle Tabs
   function someTabs(headerSelector, tabSelector, contentSelector, activeClass) {

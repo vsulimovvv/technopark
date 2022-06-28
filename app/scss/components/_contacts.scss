@@ -1,6 +1,5 @@
 .contacts {
   position: relative;
-  padding-top: 50px;
   @include adaptive-value('padding-bottom', 60, 30, 1);
   min-height: 480px;
   color: var(--color-dark);

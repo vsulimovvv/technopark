@@ -1,11 +1,39 @@
 .capabilities {
   @include adaptive-value('padding-top', 120, 70, 1);
   @include adaptive-value('padding-bottom', 80, 50, 1);
-  // margin-top: -200px;
 
-@include breakpointsMaxW($bp-container){
+  &__down {
+    display: block;
+    background-color: var(--color-white);
+    box-shadow: 0px 0px 90px 0px #e3e3e3;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    position: relative;
+    margin: 0 auto;
+    @include adaptive-value('margin-bottom', 65, 35, 1);
+    transition: 200ms ease;
 
-}
+    &:hover {
+      background-color: var(--color-accent);
+
+      &::after {
+        background-color: var(--color-white);
+      }
+    }
+
+    &::after {
+      @include elDef();
+      width: 19px;
+      height: 19px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include maskImage(url('../images/icons/chevron.svg'), contain);
+      background-color: #9a98a7;
+      transition: 200ms ease;
+    }
+  }
 
   @include breakpointsMaxW($bp-991) {
     padding-top: 70px;
@@ -18,6 +46,6 @@
   &__title {
     @include fz40();
     text-align: center;
-    @include adaptive-value('margin-bottom', 65, 50, 1);
+    @include adaptive-value('margin-bottom', 35, 25, 1);
   }
 }

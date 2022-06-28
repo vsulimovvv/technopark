@@ -15,6 +15,10 @@
       &-drag {
         background-color: var(--color-accent);
       }
+
+      @include breakpointsMaxW($bp-768) {
+        display: none;
+      }
     }
 
     .swiper-button-next,
@@ -48,6 +52,12 @@
     justify-content: space-between;
     gap: 5px;
     width: 150px;
+
+    @include breakpointsMaxW($bp-768) {
+      right: initial;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   &__slides {
@@ -109,7 +119,7 @@
           .simplebar-scrollbar {
             min-height: auto;
           }
-          
+
           .simplebar-track.simplebar-horizontal {
             height: 3px;
           }
@@ -199,12 +209,10 @@
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   background-color: #f3f5f7;
-  min-height: 435px;
   height: 100%;
 
   @include breakpointsMaxW($bp-768) {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, auto);
   }
 
   &__left {
@@ -218,10 +226,14 @@
     text-align: center;
 
     @include breakpointsMaxW($bp-768) {
-      order: 1;
       border-width: 3px;
       border-radius: 0px 0 10px 10px;
-      padding: 20px;
+      padding: 10px;
+      width: 150px;
+    }
+
+    @include breakpointsMaxW($bp-360){
+      width: 130px;
     }
   }
 
@@ -233,7 +245,7 @@
     text-align: center;
 
     @include breakpointsMaxW($bp-768) {
-      padding: 20px;
+      padding: 10px;
     }
   }
 
@@ -258,6 +270,11 @@
     width: 100%;
     max-width: 240px;
 
+    @include breakpointsMaxW($bp-768) {
+      max-height: 150px;
+      max-width: 110px;
+    }
+
     img {
       @include img(contain);
     }
@@ -269,11 +286,26 @@
     line-height: 1.1;
     font-weight: 600;
     color: var(--color-dark);
+
+    @include breakpointsMaxW($bp-768) {
+      font-size: 12px;
+    }
   }
 
   &__text {
     font-size: 15px;
     line-height: 2;
     color: #949496;
+
+    @include breakpointsMaxW($bp-768) {
+      font-size: 9px;
+    }
+  }
+
+  &__btn {
+    @include breakpointsMaxW($bp-768) {
+      padding: 10px 20px;
+      font-size: 10px;
+    }
   }
 }

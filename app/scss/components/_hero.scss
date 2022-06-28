@@ -2,6 +2,14 @@
   padding-top: 65px;
   position: relative;
 
+  @include breakpointsMaxW($bp-991) {
+    text-align: center;
+  }
+
+  @include breakpointsMaxW($bp-768){
+    padding-top: 55px;
+  }
+
   &__title {
     @include adaptive-value('font-size', 60, 30, 1);
     color: var(--color-dark);
@@ -30,6 +38,7 @@
 
   &__text {
     @include adaptive-value('margin-bottom', 50, 30, 1);
+    @include adaptive-value('font-size', 15, 13, 1);
   }
 
   &__offer {
@@ -41,26 +50,31 @@
   }
 
   &__btns {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(auto, 230px));
     gap: 15px;
 
-    @include breakpointsMaxW($bp-576) {
-      flex-direction: column;
-      align-items: flex-start;
+    @include breakpointsMaxW($bp-991) {
+      justify-content: center;
+      gap: 10px;
+    }
+    @include breakpointsMaxW($bp-360) {
+      grid-template-columns: 200px;
     }
   }
 
   &__btn {
     position: relative;
-    padding: 20px 70px 20px 30px;
+    padding: 20px 58px 20px 30px;
     font-size: 16px;
     font-weight: 500;
     border-radius: 27px;
+    width: 100%;
 
     @include breakpointsMaxW($bp-576) {
-      width: 230px;
-      padding-right: 50px;
+      padding-left: 12px;
+      padding-right: 40px;
+      font-size: 12px;
     }
 
     .hero__btn-icon {
@@ -73,6 +87,11 @@
       border-radius: 50%;
       background-color: #eff1f4;
 
+      @include breakpointsMaxW($bp-576) {
+        width: 24px;
+        height: 24px;
+      }
+
       &::after {
         @include elDef();
         width: 13px;
@@ -82,11 +101,21 @@
         transform: translate(-50%, -50%);
         @include maskImage(url('../images/icons/plus.svg'), contain);
         background-color: #7d7998;
+
+        @include breakpointsMaxW($bp-576) {
+          width: 10px;
+          height: 10px;
+        }
       }
     }
 
     &.btn--white {
       box-shadow: 0px 14px 38px 0px rgba(206, 206, 206, 0.56);
+
+      @include breakpointsMaxW($bp-576) {
+        padding-left: 12px;
+        padding-right: 40px;
+      }
     }
 
     &--arrow {
@@ -123,7 +152,7 @@
       max-width: 600px;
       margin-top: 50px;
       width: calc(100% - 30px);
-      height: calc(250px + (600 - 250) * ((100vw - 360px) / (991 - 360)));
+      height: calc(205px + (600 - 205) * ((100vw - 360px) / (991 - 360)));
       transform: translateY(0);
     }
   }

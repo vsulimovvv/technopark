@@ -17,15 +17,17 @@
 
   &__container {
     width: calc(100% - 40px);
-    max-width: 470px;
+    max-width: 480px;
     background-color: #fafafa;
     transition: 250ms ease-in;
     position: relative;
     overflow-y: auto;
     max-height: calc(100% - 40px);
     transition: 750ms ease;
-    @include adaptive-value('padding', 40, 15, 1);
-
+    padding: 40px;
+    @include adaptive-value('padding-left', 40, 15, 1);
+    @include adaptive-value('padding-right', 40, 15, 1);
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,24 +47,17 @@
   &__title {
     font-size: 25px;
     line-height: 1;
-    font-weight: 500;
-    color: #282828;
+    font-weight: 700;
     text-align: center;
-    @include adaptive-value('margin-bottom', 40, 20, 1);
+    @include adaptive-value('margin-bottom', 25, 15, 1);
+    color: var(--color-dark);
   }
 
   &__text {
-    font-size: 16px;
-    font-weight: 300;
-    color: #282828;
+    color: #8c8b93;
     text-align: center;
-    @include breakpointsMaxW($bp-768) {
-      font-size: 15px;
-    }
-
-    p {
-      margin-bottom: 20px;
-    }
+    @include adaptive-value('margin-bottom', 30, 20, 1);
+    @include adaptive-value('font-size', 15, 13, 1);
   }
 
   &__close {
@@ -74,22 +69,36 @@
     fill: #bcc4cf;
     transition: 150ms ease;
     border-radius: 50%;
-    width: 26px;
-    height: 26px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 16px;
+    height: 16px;
 
     svg {
-      width: 10px;
-      height: 10px;
+      width: 100%;
+      height: 100%;
     }
 
     &:hover {
-      fill: var(--color-white);
-      border-color: var(--color-dark);
-      background-color: var(--color-dark);
+      fill: var(--color-dark);
+    }
+  }
+
+  .form-submit {
+    &__inner {
+      grid-template-columns: 1fr;
+    }
+
+    &__group {
+      &--textarea {
+        height: 100px;
+
+        .form-submit__input {
+          height: 100%;
+        }
+      }
+    }
+
+    &__bottom {
+      grid-template-columns: 1fr;
     }
   }
 }

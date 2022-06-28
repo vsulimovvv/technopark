@@ -18,15 +18,6 @@
       url('../images/content/decor-infrastructure-bottom.png'),
       cover
     );
-
-    // @include breakpointsMaxW(1980px) {
-    //   display: block;
-    //   height: calc(80px + (30 - 80) * ((100vw - 1440px) / (1980 - 1440)));
-    // }
-
-    // @include breakpointsMaxW(1440px) {
-    //   height: 60px;
-    // }
   }
 
   .tabs {
@@ -95,13 +86,33 @@
   }
 
   &__left {
-    padding-right: 60px;
-    overflow-y: auto;
     width: 270px;
     height: 280px;
+    position: relative;
+
+    @include breakpointsMaxW($bp-768) {
+      height: auto;
+    }
+
+    &::after {
+      @include elDef();
+      width: 3px;
+      height: 100%;
+      right: 2px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #e9e8f1;
+
+      @include breakpointsMaxW($bp-768) {
+        width: 100%;
+        height: 3px;
+        bottom: 0;
+        top: initial;
+        transform: translateY(0);
+      }
+    }
 
     @include breakpointsMaxW($bp-container) {
-      padding-right: 30px;
       width: 240px;
     }
 
@@ -109,18 +120,17 @@
       width: 100%;
     }
 
-    .simplebar-track {
-      background-color: #e9e8f1;
-    }
-
-    .simplebar-scrollbar::before {
-      background-color: #9693ac;
-    }
-
     &-list {
-      display: grid;
-      @include adaptive-value('gap', 40, 30, 1);
+      display: flex;
+      flex-direction: column;
+      @include adaptive-value('gap', 40, 20, 1);
       height: 280px;
+
+      @include breakpointsMaxW($bp-container) {
+        padding-right: 0;
+        height: auto;
+        flex-direction: row;
+      }
     }
 
     &-btn {
@@ -128,9 +138,51 @@
       align-items: center;
       gap: 15px;
       transition: 200ms ease;
+      width: 100%;
+      padding-right: 60px;
+      position: relative;
+
+      @include breakpointsMaxW($bp-container) {
+        padding-right: 30px;
+      }
+
+      @include breakpointsMaxW($bp-768) {
+        flex-direction: column;
+        align-items: center;
+        padding-right: 0;
+        padding-bottom: 30px;
+        font-size: 12px;
+      }
+
+      &::after {
+        @include elDef();
+        width: 3px;
+        height: 100%;
+        right: 2px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #9693ac;
+        z-index: 1;
+        opacity: 0;
+        visibility: hidden;
+        transition: 200ms ease;
+
+        @include breakpointsMaxW($bp-768) {
+          width: 100%;
+          height: 3px;
+          bottom: 0;
+          top: initial;
+          transform: translateY(0);
+        }
+      }
 
       &.tabs-btn--active {
         color: #9693ac;
+
+        &::after {
+          opacity: 1;
+          visibility: visible;
+        }
 
         .icon {
           background-color: #9693ac;
@@ -143,6 +195,11 @@
 
       &:hover {
         color: #9693ac;
+
+        &::after {
+          opacity: 1;
+          visibility: visible;
+        }
 
         .icon {
           background-color: #9693ac;
@@ -160,6 +217,7 @@
         border-radius: 50%;
         position: relative;
         transition: 200ms ease;
+        flex-shrink: 0;
 
         &::after {
           @include elDef();

@@ -16,7 +16,7 @@
   &__content {
     display: flex;
     align-items: center;
-    gap: 90px;
+    @include adaptive-value('gap', 90, 50, 1);
   }
 
   &__slider {
@@ -32,10 +32,14 @@
   }
 
   &__slide {
-    // width: auto;
     max-width: 240px;
+    width: 100%;
     padding-right: 90px;
     position: relative;
+
+    @include breakpointsMaxW($bp-768) {
+      padding-right: 0;
+    }
 
     &:last-child {
       &::after {
@@ -50,10 +54,16 @@
       background-color: var(--color-accent);
       right: 0;
       top: 0;
+      
+      @include breakpointsMaxW($bp-768) {
+        display: none;
+      }
     }
   }
 
   .news-item {
+    width: 100%;
+
     &:last-child {
       &::after {
         display: none;

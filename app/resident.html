@@ -21,11 +21,16 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/simplebar/5.3.8/simplebar.min.css"
 />
 
-
 <!-- fancybox -->
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
+/>
+
+<!-- datepicker -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.css"
 />
 
 <!-- Nice Select -->
@@ -42,154 +47,126 @@
   </head>
 
   <body>
-    <div class="popup popup--service">
+    <div class="popup popup--contact">
   <div class="popup__container">
     <button class="popup__close" type="button" aria-label="Закрыть">
       <svg width="15" height="15">
         <use xlink:href="images/sprite.svg#close"></use>
       </svg>
     </button>
+
     <div class="popup__wrapper">
-      <h2 class="popup__title">Заявка на услугу “Испытательный комплекс”</h2>
+      <h2 class="popup__title">Напишите нам</h2>
       <div class="popup__text">
-        <p>Оставьте ваши данные и мы вам перезвоним.</p>
+        <p>
+          Напишите нам и наши менеджеры ответят <br />
+          Вам в ближайшее время
+        </p>
       </div>
 
-      <form class="request__form form-submit">
-        <div class="form-submit__group">
-          <label class="form-submit__label" for="service-name">Имя</label>
-          <div class="form-submit__input-wrap form-submit__input-wrap--name">
+      <form class="form-submit">
+        <div class="form-submit__inner">
+          <div class="form-submit__group">
             <input
               class="form-submit__input"
-              name="name"
-              id="service-name"
               type="text"
-              placeholder="Введите ваше имя"
-              required
+              placeholder="Ваше имя"
             />
           </div>
-        </div>
-        <div class="form-submit__group">
-          <label class="form-submit__label" for="service-tel">
-            Контактный телефон
-          </label>
-          <div class="form-submit__input-wrap form-submit__input-wrap--phone">
+          <div class="form-submit__group">
             <input
               class="form-submit__input"
-              name="tel"
-              id="service-tel"
-              type="tel"
-              placeholder="+7 (___) ___-__-__"
-              required
+              type="email"
+              placeholder="Ваш E-mail"
             />
           </div>
+          <div class="form-submit__group form-submit__group--textarea">
+            <textarea
+              class="form-submit__input"
+              placeholder="Сообщение"
+            ></textarea>
+          </div>
         </div>
+        <div class="form-submit__bottom">
+          <label class="checkbox">
+            <input class="checkbox__input" type="checkbox" required />
+            <span class="checkbox__box"></span>
+            <span class="checkbox__text">
+              Нажимая на кнопку, Вы даете согласие на обработку персональных
+              даных и согладаетесь с
+              <a href="#"> политикой конфиденциальности</a>
+            </span>
+          </label>
 
-        <button class="form-submit__btn btn" type="button">
-          Заказать звонок
-        </button>
+          <button class="form-submit__btn btn" type="submit">Отправить</button>
+        </div>
       </form>
     </div>
   </div>
 </div>
 
-<div class="popup popup--product">
+<div class="popup popup--event">
   <div class="popup__container">
     <button class="popup__close" type="button" aria-label="Закрыть">
       <svg width="15" height="15">
         <use xlink:href="images/sprite.svg#close"></use>
       </svg>
     </button>
+
     <div class="popup__wrapper">
-      <h2 class="popup__title">Заказ насоса ДГН СЕРИЯ</h2>
+      <h2 class="popup__title">Провести мероприятие</h2>
       <div class="popup__text">
-        <p>Оставьте ваши данные и мы вам перезвоним.</p>
+        <p>
+          Напишите нам и наши менеджеры ответят <br />
+          Вам в ближайшее время
+        </p>
       </div>
 
-      <form class="request__form form-submit">
-        <div class="form-submit__group">
-          <label class="form-submit__label" for="product-name">Имя</label>
-          <div class="form-submit__input-wrap form-submit__input-wrap--name">
+      <form class="form-submit">
+        <div class="form-submit__inner">
+          <div class="form-submit__group">
             <input
               class="form-submit__input"
-              name="name"
-              id="product-name"
               type="text"
-              placeholder="Введите ваше имя"
-              required
+              placeholder="Ваше ФИО"
             />
           </div>
-        </div>
-        <div class="form-submit__group">
-          <label class="form-submit__label" for="product-tel">
-            Контактный телефон
-          </label>
-          <div class="form-submit__input-wrap form-submit__input-wrap--phone">
+          <div class="form-submit__group">
             <input
               class="form-submit__input"
-              name="tel"
-              id="product-tel"
               type="tel"
-              placeholder="+7 (___) ___-__-__"
-              required
+              placeholder="Контактный телефон"
             />
           </div>
-        </div>
-
-        <button class="form-submit__btn btn" type="button">
-          Заказать звонок
-        </button>
-      </form>
-    </div>
-  </div>
-</div>
-
-<div class="popup popup--consultation">
-  <div class="popup__container">
-    <button class="popup__close" type="button" aria-label="Закрыть">
-      <svg width="15" height="15">
-        <use xlink:href="images/sprite.svg#close"></use>
-      </svg>
-    </button>
-    <div class="popup__wrapper">
-      <h2 class="popup__title">Заказать консультацию</h2>
-      <div class="popup__text">
-        <p>Оставьте ваши данные и мы вам перезвоним.</p>
-      </div>
-
-      <form class="request__form form-submit">
-        <div class="form-submit__group">
-          <label class="form-submit__label" for="consultation-name">Имя</label>
-          <div class="form-submit__input-wrap form-submit__input-wrap--name">
+          <div class="form-submit__group">
+            <select class="form-submit__select select">
+              <option value="">Выбирете тип площадки</option>
+              <option value="1">Открытая</option>
+              <option value="2">Закрытая</option>
+            </select>
+          </div>
+          <div class="form-submit__group">
             <input
               class="form-submit__input"
-              name="name"
-              id="consultation-name"
               type="text"
-              placeholder="Введите ваше имя"
-              required
+              placeholder="Укажите дату проведения"
+              id="datepicker"
             />
           </div>
         </div>
-        <div class="form-submit__group">
-          <label class="form-submit__label" for="consultation-tel">
-            Контактный телефон
+        <div class="form-submit__bottom">
+          <label class="checkbox">
+            <input class="checkbox__input" type="checkbox" required />
+            <span class="checkbox__box"></span>
+            <span class="checkbox__text">
+              Нажимая на кнопку, Вы даете согласие на обработку персональных
+              даных и согладаетесь с
+              <a href="#"> политикой конфиденциальности</a>
+            </span>
           </label>
-          <div class="form-submit__input-wrap form-submit__input-wrap--phone">
-            <input
-              class="form-submit__input"
-              name="tel"
-              id="consultation-tel"
-              type="tel"
-              placeholder="+7 (___) ___-__-__"
-              required
-            />
-          </div>
-        </div>
 
-        <button class="form-submit__btn btn" type="button">
-          Заказать звонок
-        </button>
+          <button class="form-submit__btn btn" type="submit">Отправить заявку</button>
+        </div>
       </form>
     </div>
   </div>
@@ -243,7 +220,7 @@
     <div class="header__top">
       <div class="container">
         <div class="header__top-inner">
-          <a class="img" href="index.html">
+          <a class="header__logo logo" href="index.html">
             <img src="images/logo.png" alt="Логотип" />
           </a>
 
@@ -613,7 +590,7 @@
   <div class="container">
     <div class="footer__wrapper">
       <div class="footer__left">
-        <div class="footer__col">
+        <div class="footer__col footer__col--first">
           <a class="footer__logo logo" href="index.html">
             <img src="images/logo.png" alt="" />
           </a>
@@ -621,7 +598,7 @@
             <img src="images/logo-moscow.png" alt="" />
           </div>
         </div>
-        <div class="footer__col">
+        <div class="footer__col footer__col--company">
           <span class="footer__name">КОМПАНИЯ</span>
 
           <ul class="footer__list">
@@ -644,7 +621,7 @@
         </div>
       </div>
       <div class="footer__right">
-        <div class="footer__col">
+        <div class="footer__col footer__col--contacts">
           <span class="footer__name">КОНТАКТЫ</span>
 
           <ul class="footer-contacts">
@@ -664,7 +641,7 @@
         <div class="footer__col footer__col--last">
           <span class="footer__name">ОБРАТНАЯ СВЯЗЬ</span>
 
-          <button class="footer__btn btn btn--white" type="button">
+          <button class="footer__btn contact-btn btn btn--white" type="button">
             Написать нам
           </button>
 
@@ -675,6 +652,7 @@
 
     <div class="footer__bottom">
       <p>© 2022 Технопарк Мосгормаш. All rights reserved.</p>
+      <a class="footer__up footer__up--mobile" href="#" aria-label="Наверх"></a>
     </div>
   </div>
 </footer>
@@ -704,6 +682,9 @@
 
 <!-- mixitup -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
+
+<!-- datepicker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.js"></script>
 
 <!-- Nice Select -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>

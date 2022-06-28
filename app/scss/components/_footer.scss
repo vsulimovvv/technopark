@@ -1,5 +1,6 @@
 .footer {
   background-color: var(--color-bg);
+  position: relative;
 
   &__logo {
     margin-bottom: 40px;
@@ -98,16 +99,52 @@
     margin-bottom: 30px;
     margin-left: auto;
 
-    @include breakpointsMaxW($bp-576) {
-      margin-left: 0;
+    @include breakpointsMaxW($bp-768) {
+      margin: 0 auto;
     }
   }
 
   &__col {
+    &--contacts {
+      @include breakpointsMaxW($bp-768) {
+        .footer__name {
+          display: none;
+        }
+      }
+    }
+    &--company {
+      @include breakpointsMaxW($bp-768) {
+        display: none;
+      }
+    }
+    &--first {
+      @include breakpointsMaxW($bp-768) {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        border-bottom: 1px solid #dedede;
+        padding-bottom: 20px;
+
+        .footer__logo {
+          max-width: 150px;
+          width: 100%;
+          margin-bottom: 0;
+        }
+
+        .footer__logo-moscow {
+          max-width: 150px;
+          width: 100%;
+        }
+      }
+    }
     &--last {
       .footer__name {
         @include breakpointsMaxW($bp-991) {
           text-align: right;
+        }
+
+        @include breakpointsMaxW($bp-768) {
+          display: none;
         }
 
         @include breakpointsMaxW($bp-576) {
@@ -126,6 +163,18 @@
     transition: 200ms ease;
     position: relative;
     margin-left: auto;
+
+    @include breakpointsMaxW($bp-768) {
+      display: none;
+    }
+
+    &--mobile {
+      display: none;
+
+      @include breakpointsMaxW($bp-768) {
+        display: block;
+      }
+    }
 
     @include breakpointsMaxW($bp-576) {
       margin-left: 0;
@@ -160,6 +209,14 @@
     font-size: 13px;
     line-height: 1;
     padding: 20px 0;
+
+    @include breakpointsMaxW($bp-768) {
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
   }
 
   .footer-contacts {
@@ -172,6 +229,11 @@
       font-size: 14px;
       line-height: 1;
 
+      @include breakpointsMaxW($bp-768) {
+        text-align: center;
+        padding-left: 0;
+      }
+
       &::after {
         @include elDef();
         width: 16px;
@@ -179,6 +241,10 @@
         top: 0;
         left: 0;
         background-color: #7c7a98;
+
+        @include breakpointsMaxW($bp-768) {
+          display: none;
+        }
       }
 
       &--mail {
@@ -187,7 +253,7 @@
         }
 
         transition: 200ms ease;
-          
+
         &:hover {
           color: var(--color-accent);
         }
