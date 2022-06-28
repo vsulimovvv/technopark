@@ -1,4 +1,4 @@
-## ALEXM
+## Технопарк
 ### Страницы
 Главная: https://vsulimovvv.github.io/technopark/app/index.html  
 О нас: https://vsulimovvv.github.io/technopark/app/about.html  
