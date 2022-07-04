@@ -7,3 +7,4 @@
 Карточка резидента: https://vsulimovvv.github.io/technopark/app/resident.html  
 Аддитивный технопарк: https://vsulimovvv.github.io/technopark/app/additive.html  
 Контакты: https://vsulimovvv.github.io/technopark/app/contacts.html  
+Детский технопарк: https://vsulimovvv.github.io/technopark/app/childrens.html  
