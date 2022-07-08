@@ -1,16 +1,54 @@
 .children-section {
-  @include adaptive-value('padding-top', 120, 70, 1);
-  @include adaptive-value('padding-bottom', 100, 60, 1);
+  padding-top: 300px;
   @include background(cover);
+  position: relative;
+  margin-top: -250px;
+  z-index: 1;
+
+  @include breakpointsMaxW($bp-991) {
+    padding-top: 100px;
+    margin-top: 0;
+    background-color: #f5f7ff;
+  }
+
+  @include breakpointsMaxW($bp-768) {
+    padding-top: 50px;
+  }
+
+  &::after {
+    @include elDef();
+    width: 100%;
+    height: 260px;
+    top: 0;
+    left: 0;
+    background-image: url('../images/content/decors/3.png');
+    @include background(cover);
+
+    @include breakpointsMaxW($bp-991) {
+      display: none;
+    }
+  }
+
+  &__content {
+    @include backgroundImage(url('../images/content/decors/3-2.png'), cover);
+    padding-top: 110px;
+    margin-top: -50px;
+    @include adaptive-value('padding-bottom', 100, 60, 1);
+
+    @include breakpointsMaxW($bp-991) {
+      padding-top: 50px;
+    }
+  }
 
   &__wrapper {
     display: grid;
-    grid-template-columns: minmax(auto, 495px) minmax(auto, 620px);
+    grid-template-columns: minmax(auto, 500px) minmax(auto, 620px);
     justify-content: space-between;
     gap: 30px;
 
     @include breakpointsMaxW($bp-991) {
       grid-template-columns: 1fr;
+      gap: 50px;
     }
   }
 

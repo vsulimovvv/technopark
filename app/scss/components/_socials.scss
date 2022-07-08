@@ -1,0 +1,56 @@
+.socials {
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+  }
+
+  &__link {
+    display: block;
+    width: 42px;
+    height: 42px;
+    background-color: var(--color-white);
+    border: 1px solid #dddddd;
+    border-radius: 50%;
+    position: relative;
+    transition: 300ms ease;
+
+    &:hover {
+      &::after {
+        background-color: var(--color-white);
+      }
+    }
+
+    &::after {
+      @include elDef();
+      width: 18px;
+      height: 18px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: 300ms ease;
+    }
+
+    &--vk {
+      &::after {
+        background-color: #4b729f;
+        @include maskImage(url('../images/icons/vk.svg'), contain);
+      }
+
+      &:hover {
+        background-color: #4b729f;
+      }
+    }
+
+    &--youtube {
+      &::after {
+        background-color: #f44336;
+        @include maskImage(url('../images/icons/youtube.svg'), contain);
+      }
+
+      &:hover {
+        background-color: #f44336;
+      }
+    }
+  }
+}

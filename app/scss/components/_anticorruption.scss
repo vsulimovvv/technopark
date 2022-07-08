@@ -1,0 +1,50 @@
+.anticorruption {
+  @include adaptive-value('margin-bottom', 90, 50, 1);
+
+  &__title {
+    @include fz35();
+    color: var(--color-dark);
+    @include adaptive-value('margin-bottom', 50, 30, 1);
+  }
+
+  &__list {
+    display: grid;
+    @include adaptive-value('gap', 18, 13, 1);
+  }
+
+  &__link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.3;
+    color: #363441;
+    border-radius: 10px;
+    padding: 22px 25px 22px 65px;
+    text-transform: uppercase;
+    border: 1px solid #7b7a96;
+    transition: 200ms ease;
+    position: relative;
+
+    &::after {
+      @include elDef();
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      transform: translate(0, -50%);
+      left: 25px;
+      background-color: #7b7a96;
+      @include maskImage(url('../images/icons/save.svg'), contain);
+      transition: 200ms ease;
+    }
+
+    &:hover {
+      color: var(--color-white);
+      background-color: #7b7a96;
+
+      &::after {
+        background-color: var(--color-white);
+      }
+    }
+  }
+}

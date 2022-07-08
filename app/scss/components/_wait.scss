@@ -1,6 +1,34 @@
 .wait {
   @include adaptive-value('padding-top', 80, 50, 1);
   @include adaptive-value('padding-bottom', 80, 50, 1);
+  position: relative;
+  z-index: 2;
+
+  &::after {
+    @include elDef();
+    width: 350px;
+    height: 350px;
+    @include backgroundImage(
+      url('../images/content/decors/bubble-1.png'),
+      contain
+    );
+    right: 0px;
+    top: 50px;
+    z-index: -1;
+    right: max(15px, calc((100% - 1820px) / 2));
+
+    // @include breakpointsMinW($bp-container) {
+    //   right: 40px;
+    // }
+
+    @include breakpointsMaxW($bp-container) {
+      top: 70px;
+    }
+
+    @include breakpointsMaxW($bp-991) {
+      display: none;
+    }
+  }
 
   &__title {
     @include fz40();
@@ -78,6 +106,7 @@
     gap: 30px;
     text-align: center;
     transition: 300ms ease;
+    background-color: var(--color-white);
 
     @include breakpointsMaxW($bp-768) {
       padding: 20px 10px;
