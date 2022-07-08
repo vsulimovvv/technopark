@@ -6,7 +6,7 @@
     text-align: center;
   }
 
-  @include breakpointsMaxW($bp-768){
+  @include breakpointsMaxW($bp-768) {
     padding-top: 55px;
   }
 
@@ -18,20 +18,22 @@
     font-weight: 800;
 
     span {
-      color: #9693ac;
-      position: relative;
+      color: #9693ac !important;
       display: inline-block;
-      padding-left: 65px;
       @include adaptive-value('padding-left', 65, 33, 1);
+      position: relative;
 
-      &::after {
-        @include elDef();
+      img {
         height: 40px;
         @include adaptive-value('width', 60, 30, 1);
-        @include backgroundImage(url('../images/logo-gray.png'), contain);
+        position: absolute;
+        left: 0;
         top: 50%;
         transform: translateY(-50%);
-        left: 0;
+
+        @include breakpointsMaxW($bp-991) {
+          object-fit: contain;
+        }
       }
     }
   }
