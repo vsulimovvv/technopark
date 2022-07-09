@@ -337,7 +337,10 @@ html{-webkit-box-sizing:border-box;box-sizing:border-box}*,*::after,*::before{-w
       )}}.support__title{font-size:40px;line-height:1.1;font-weight:900;color:var(--color-dark);color:var(--color-white);margin-bottom:20px}@media(max-width: 1270px){.support__title{font-size:calc(
         25px + 15 *
           ((100vw - 360px) / 910)
-      )}}@media(max-width: 767.98px){.support__title{text-align:center}}.support__text{font-size:18px;line-height:1.2}.support__slide{max-width:605px;-webkit-box-sizing:border-box;box-sizing:border-box;height:100%}.support__slides{margin-bottom:50px}@media(max-width: 1270px){.support__slides{margin-bottom:calc(
+      )}}@media(max-width: 767.98px){.support__title{text-align:center}}.support__text{line-height:1.2;font-size:18px}@media(max-width: 1270px){.support__text{font-size:calc(
+        14px + 4 *
+          ((100vw - 360px) / 910)
+      )}}@media(max-width: 767.98px){.support__text{text-align:center}}.support__slide{max-width:605px;-webkit-box-sizing:border-box;box-sizing:border-box;height:100%}.support__slides{margin-bottom:50px}@media(max-width: 1270px){.support__slides{margin-bottom:calc(
         30px + 20 *
           ((100vw - 360px) / 910)
       )}}.support__slider{margin-bottom:50px}@media(max-width: 1270px){.support__slider{margin-bottom:calc(

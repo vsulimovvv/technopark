@@ -53,8 +53,12 @@
   }
 
   &__text {
-    font-size: 18px;
     line-height: 1.2;
+    @include adaptive-value('font-size', 18, 14, 1);
+
+    @include breakpointsMaxW($bp-768){
+      text-align: center;
+    }
   }
 
   &__slide {
