@@ -27,7 +27,7 @@
   &__wrapper {
     background-color: #fafafc;
     margin-top: -10px;
-    padding-bottom: 210px;
+    padding-bottom: 310px;
 
     @include breakpointsMaxW($bp-991) {
       padding-bottom: 100px;
@@ -125,12 +125,6 @@
       }
 
       @include breakpointsMaxW($bp-576) {
-        width: calc(100% - 30px);
-        height: 3px;
-        bottom: 0;
-        top: initial;
-        transform: translateY(0);
-        transform: translateX(-50%);
       }
     }
 
@@ -175,6 +169,10 @@
         padding-right: 0;
         padding-bottom: 30px;
         font-size: 12px;
+      }
+
+      @include breakpointsMaxW($bp-576){
+        height: 100%;
       }
 
       &::after {
