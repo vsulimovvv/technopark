@@ -54,26 +54,6 @@
   content: '';
 }
 
-@mixin fz40() {
-  @include adaptive-value('font-size', 40, 25, 1);
-  line-height: 1.1;
-  font-weight: 900;
-  color: var(--color-dark);
-}
-
-@mixin fz35() {
-  @include adaptive-value('font-size', 35, 23, 1);
-  line-height: 1.1;
-  font-weight: 700;
-  color: var(--color-dark);
-}
-
-@mixin fz30() {
-  @include adaptive-value('font-size', 30, 20, 1);
-  line-height: 1.1;
-  font-weight: 700;
-  color: var(--color-dark);
-}
 
 @mixin line-clamp($lines: 1) {
   @if $lines <=1 {
@@ -101,7 +81,7 @@ $maxWidthContainer: 1270;
     @media (max-width: #{$maxWidthContainer + px}) {
       #{$property}: calc(
         #{$minSize + px} + #{$addSize} *
-          ((100vw - 375px) / #{$maxWidthContainer - 375})
+          ((100vw - 360px) / #{$maxWidthContainer - 360})
       );
     }
   } @else if $type==2 {
@@ -109,14 +89,36 @@ $maxWidthContainer: 1270;
 
     @media (min-width: #{$maxWidthContainer + px}) {
       #{$property}: calc(
-        #{$minSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidth - 375})
+        #{$minSize + px} + #{$addSize} * ((100vw - 360px) / #{$maxWidth - 360})
       );
     }
   } @else {
     #{$property}: calc(
-      #{$minSize + px} + #{$addSize} * ((100vw - 375px) / #{$maxWidth - 375})
+      #{$minSize + px} + #{$addSize} * ((100vw - 360px) / #{$maxWidth - 360})
     );
   }
 }
+
+@mixin fz40() {
+  @include adaptive-value('font-size', 40, 25, 1);
+  line-height: 1.1;
+  font-weight: 900;
+  color: var(--color-dark);
+}
+
+@mixin fz35() {
+  @include adaptive-value('font-size', 35, 25, 1);
+  line-height: 1.1;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+@mixin fz30() {
+  @include adaptive-value('font-size', 30, 25, 1);
+  line-height: 1.1;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
 
 //  margin-bottom: calc(28px + (36 - 28) * ((100vw - 360px) / (1270 - 360)));

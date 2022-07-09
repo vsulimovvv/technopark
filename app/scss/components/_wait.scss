@@ -1,8 +1,17 @@
 .wait {
-  @include adaptive-value('padding-top', 80, 50, 1);
+  padding-top: 50px;
   @include adaptive-value('padding-bottom', 80, 50, 1);
   position: relative;
   z-index: 2;
+  overflow-x: hidden;
+
+  @include breakpointsMaxW($bp-768) {
+    padding-top: 60px;
+  }
+
+  @include breakpointsMaxW($bp-576) {
+    padding-bottom: 0;
+  }
 
   &::after {
     @include elDef();
@@ -16,17 +25,20 @@
     top: 50px;
     z-index: -1;
     right: max(15px, calc((100% - 1820px) / 2));
-
-    // @include breakpointsMinW($bp-container) {
-    //   right: 40px;
-    // }
+    width: calc(110px + (350 - 110) * ((100vw - 360px) / (1270 - 360)));
+    height: calc(110px + (350 - 110) * ((100vw - 360px) / (1270 - 360)));
 
     @include breakpointsMaxW($bp-container) {
       top: 70px;
     }
 
     @include breakpointsMaxW($bp-991) {
-      display: none;
+      right: -30px;
+      top: 90px;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      top: 110px;
     }
   }
 
@@ -34,6 +46,14 @@
     @include fz40();
     text-align: center;
     @include adaptive-value('margin-bottom', 70, 40, 1);
+
+    @include breakpointsMaxW($bp-768) {
+      line-height: 1.5;
+
+      span {
+        display: block;
+      }
+    }
   }
 
   &__list {
@@ -96,7 +116,7 @@
     border: 5px solid #edeff6;
     border-radius: 20px;
     width: 100%;
-    @include adaptive-value('height', 250, 150, 1);
+    @include adaptive-value('height', 250, 145, 1);
     position: relative;
     display: flex;
     flex-direction: column;

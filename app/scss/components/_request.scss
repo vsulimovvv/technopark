@@ -1,34 +1,42 @@
 .request {
   @include adaptive-value('padding-bottom', 80, 50, 1);
-  padding-top: 250px;
+  padding-top: 180px;
   padding-bottom: 100px;
   z-index: 1;
   position: relative;
-  margin-top: -150px;
+  margin-top: -50px;
 
   @include breakpointsMaxW($bp-768) {
-    padding-top: 50px;
-    margin-top: 0;
+    padding-top: 160px;
   }
 
   &::after {
     @include elDef();
     width: 100%;
     height: 260px;
-    top: 0;
+    top: -60px;
     left: 0;
     background-image: url('../images/content/decors/4.png');
     background-size: 100% 100%;
     z-index: -1;
 
-    @include breakpointsMaxW($bp-container) {
+    @include breakpointsMaxW(1441px) {
       background-size: cover;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      top: 20px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      top: 50px;
+      background-image: url('../images/content/decors/4-2.png');
     }
   }
 
   &__content {
     background-color: #f5f7ff;
-    padding-bottom: 300px;
+    padding-bottom: 400px;
 
     @include breakpointsMaxW($bp-991) {
       padding-bottom: 200px;
@@ -37,7 +45,11 @@
 
   &__title {
     @include fz40();
-    @include adaptive-value('margin-bottom', 35, 25, 1);
+    @include adaptive-value('margin-bottom', 35, 12, 1);
+
+    @include breakpointsMaxW($bp-768) {
+      line-height: 1.5;
+    }
 
     @include breakpointsMaxW($bp-991) {
       text-align: center;
@@ -68,6 +80,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     align-items: center;
+    position: relative;
 
     @include breakpointsMaxW($bp-991) {
       grid-template-columns: 1fr;
@@ -76,13 +89,29 @@
   }
 
   &__preview {
+    position: absolute;
     max-width: 660px;
     width: 100%;
     @include background(contain);
-    @include adaptive-value('height', 575, 300, 1);
+    @include adaptive-value('height', 575, 250, 1);
+    right: -16px;
+    top: -118px;
+
+    @include breakpointsMaxW(1450px) {
+      max-width: calc(450px + (560 - 450) * ((100vw - 991px) / (1270 - 991)));
+      right: 15px;
+    }
+
+    @include breakpointsMaxW($bp-container) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
 
     @include breakpointsMaxW($bp-991) {
       margin: 0 auto;
+      position: static;
+      transform: translateY(0);
+      max-width: calc(300px + (450 - 250) * ((100vw - 360px) / (991 - 360)));
     }
   }
 }
@@ -131,7 +160,7 @@
 
     @include breakpointsMaxW($bp-768) {
       font-size: 15px;
-      padding: 10px 15px;
+      padding: 10px 30px;
     }
 
     &::placeholder {

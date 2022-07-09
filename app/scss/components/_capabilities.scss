@@ -1,6 +1,10 @@
 .capabilities {
   margin-top: -80px;
 
+  @include breakpointsMaxW($bp-768){
+    margin-top: -95px;
+  }
+
   &__down {
     display: block;
     background-color: var(--color-white);
@@ -10,7 +14,7 @@
     border-radius: 50%;
     position: relative;
     margin: 0 auto;
-    @include adaptive-value('margin-bottom', 65, 35, 1);
+    @include adaptive-value('margin-bottom', 65, 25, 1);
     transition: 200ms ease;
 
     &:hover {

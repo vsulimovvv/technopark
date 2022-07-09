@@ -49,14 +49,7 @@ window.addEventListener('DOMContentLoaded', () => {
       },
     });
   })();
-  // * ===== Slider
-  (function slider() {
-    const sliderEl = document.querySelector('.hashtags__slider');
-    new Swiper(sliderEl, {
-      slidesPerView: 'auto',
-      spaceBetween: 30,
-    });
-  })();
+
   // * ===== Slider
   (function slider() {
     const sliderEl = document.querySelector('.news-section__slider');

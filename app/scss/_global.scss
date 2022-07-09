@@ -35,6 +35,10 @@ body {
     padding-bottom: 100px;
   }
 
+  @include breakpointsMaxW($bp-768) {
+    padding-bottom: 200px;
+  }
+
   &::after {
     @include elDef();
     bottom: 0;
@@ -44,6 +48,10 @@ body {
     background-image: url('../images/content/decors/1.png');
     @include background(cover);
     z-index: -1;
+
+    @include breakpointsMaxW($bp-768) {
+      // @include background(100%);
+    }
   }
 }
 
@@ -145,6 +153,8 @@ body {
 
     @include breakpointsMaxW($bp-576) {
       font-size: 14px;
+      width: 170px;
+      padding: 14px 60px 14px 25px;
     }
 
     &::after {
