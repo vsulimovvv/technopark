@@ -344,3 +344,19 @@ body {
     }
   }
 }
+
+.developed {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__logo {
+    transition: 200ms ease;
+    width: 110px;
+    max-height: 20px;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

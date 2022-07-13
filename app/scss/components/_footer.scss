@@ -43,7 +43,7 @@
       gap: 40px;
     }
 
-    @include breakpointsMaxW($bp-576) {
+    @include breakpointsMaxW($bp-768) {
       grid-template-columns: 1fr;
     }
   }
@@ -57,7 +57,7 @@
       gap: 40px;
     }
 
-    @include breakpointsMaxW($bp-576) {
+    @include breakpointsMaxW($bp-768) {
       grid-template-columns: 1fr;
     }
   }
@@ -124,6 +124,7 @@
         gap: 30px;
         border-bottom: 1px solid #dedede;
         padding-bottom: 20px;
+        margin: 0 auto;
 
         .footer__logo {
           max-width: 150px;
@@ -165,19 +166,16 @@
     margin-left: auto;
 
     @include breakpointsMaxW($bp-768) {
-      display: none;
+      // display: none;
+      margin: 20px auto 0;
     }
 
     &--mobile {
       display: none;
 
-      @include breakpointsMaxW($bp-768) {
-        display: block;
-      }
-    }
-
-    @include breakpointsMaxW($bp-576) {
-      margin-left: 0;
+      // @include breakpointsMaxW($bp-768) {
+      //   display: block;
+      // }
     }
 
     &::after {
@@ -210,6 +208,18 @@
     line-height: 1;
     padding: 20px 0;
 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    @include breakpointsMaxW($bp-768) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__text {
     @include breakpointsMaxW($bp-768) {
       font-size: 11px;
       display: flex;
