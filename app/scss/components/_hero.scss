@@ -160,13 +160,15 @@
     top: 70%;
     transform: translateY(-50%);
     right: 0;
-    width: 900px;
-    height: 600px;
+    width: 1000px;
+    height: 800px;
     @include background(contain);
     right: max(15px, calc((100% - 1640px) / 2));
 
     @include breakpointsMaxW(1640px) {
-      width: calc(450px + (900 - 450) * ((100vw - 991px) / (1640 - 991)));
+      width: calc(450px + (1000 - 450) * ((100vw - 991px) / (1640 - 991)));
+      height: calc(400px + (800 - 400) * ((100vw - 991px) / (1640 - 991)));
+      top: 60%;
     }
 
     @include breakpointsMaxW($bp-991) {

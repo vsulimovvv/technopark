@@ -1,0 +1,124 @@
+<div class="popup popup--contact">
+  <div class="popup__container">
+    <button class="popup__close" type="button" aria-label="Закрыть">
+      <svg width="15" height="15">
+        <use xlink:href="images/sprite.svg#close"></use>
+      </svg>
+    </button>
+
+    <div class="popup__wrapper">
+      <h2 class="popup__title">Напишите нам</h2>
+      <div class="popup__text">
+        <p>
+          Напишите нам и наши менеджеры ответят <br />
+          Вам в ближайшее время
+        </p>
+      </div>
+
+      <form class="form-submit">
+        <div class="form-submit__inner">
+          <div class="form-submit__group">
+            <input
+              class="form-submit__input"
+              type="text"
+              placeholder="Ваше имя"
+            />
+          </div>
+          <div class="form-submit__group">
+            <input
+              class="form-submit__input"
+              type="email"
+              placeholder="Ваш E-mail"
+            />
+          </div>
+          <div class="form-submit__group form-submit__group--textarea">
+            <textarea
+              class="form-submit__input"
+              placeholder="Сообщение"
+            ></textarea>
+          </div>
+        </div>
+        <div class="form-submit__bottom">
+          <label class="checkbox">
+            <input class="checkbox__input" type="checkbox" required />
+            <span class="checkbox__box"></span>
+            <span class="checkbox__text">
+              Нажимая на кнопку, Вы даете согласие на обработку персональных
+              даных и согладаетесь с
+              <a href="#"> политикой конфиденциальности</a>
+            </span>
+          </label>
+
+          <button class="form-submit__btn btn" type="submit">Отправить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="popup popup--event">
+  <div class="popup__container">
+    <button class="popup__close" type="button" aria-label="Закрыть">
+      <svg width="15" height="15">
+        <use xlink:href="images/sprite.svg#close"></use>
+      </svg>
+    </button>
+
+    <div class="popup__wrapper">
+      <h2 class="popup__title">Провести мероприятие</h2>
+      <div class="popup__text">
+        <p>
+          Напишите нам и наши менеджеры ответят <br />
+          Вам в ближайшее время
+        </p>
+      </div>
+
+      <form class="form-submit">
+        <div class="form-submit__inner">
+          <div class="form-submit__group">
+            <input
+              class="form-submit__input"
+              type="text"
+              placeholder="Ваше ФИО"
+            />
+          </div>
+          <div class="form-submit__group">
+            <input
+              class="form-submit__input"
+              type="tel"
+              placeholder="Контактный телефон"
+            />
+          </div>
+          <div class="form-submit__group">
+            <select class="form-submit__select select">
+              <option value="">Выбирете тип площадки</option>
+              <option value="1">Открытая</option>
+              <option value="2">Закрытая</option>
+            </select>
+          </div>
+          <div class="form-submit__group">
+            <input
+              class="form-submit__input"
+              type="text"
+              placeholder="Укажите дату проведения"
+              id="datepicker"
+            />
+          </div>
+        </div>
+        <div class="form-submit__bottom">
+          <label class="checkbox">
+            <input class="checkbox__input" type="checkbox" required />
+            <span class="checkbox__box"></span>
+            <span class="checkbox__text">
+              Нажимая на кнопку, Вы даете согласие на обработку персональных
+              даных и согладаетесь с
+              <a href="#"> политикой конфиденциальности</a>
+            </span>
+          </label>
+
+          <button class="form-submit__btn btn" type="submit">Отправить заявку</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
